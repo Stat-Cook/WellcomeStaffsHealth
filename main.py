@@ -35,9 +35,10 @@ def index():
 def crm():
 
     frm = pd.read_sql_query(
-        sql=db.select([Participant.id,
-                       Participant.name
-            ]),
+        sql=db.select(
+            Participant.id,
+            Participant.name
+        ),
         con=db.engine
     )
 
