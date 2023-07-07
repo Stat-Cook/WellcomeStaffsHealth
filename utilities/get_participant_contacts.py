@@ -33,7 +33,7 @@ def get_participant_contacts(name, scheduled_contacts, participant_generated_con
         researcher_led_contacts_frame, participant_led_contacts_frame
     ])
 
-    contacts_frame = contacts_frame.sort_values("datetime", ascending=False).drop("id", 1)
+    contacts_frame = contacts_frame.sort_values("datetime", ascending=False).drop("id", axis=1)
     print(contacts_frame)
 
     contacts_frame_as_html = contacts_frame.to_html(classes='data', escape=False)
